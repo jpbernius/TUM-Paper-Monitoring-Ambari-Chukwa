@@ -5,6 +5,8 @@ As Internet Applications get bigger and bigger, more and more servers get involv
 \subsection{Definitions}
 
 \subsection{Structure of this paper}
+First of all we intend to defin the basic concept of Hadoop, monitoring and the map and reduce process because it is necessary for both of our main topics, Ambari and Chukwa. In the second step we will introduce our research question and answer them. Finally we will give a brief summary and explain our counclusion on this topic.
+
 \subsection{Literature Review}
 	As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarize the research and review process.
 	Utilizing Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost}.
@@ -14,10 +16,15 @@ Hadoop is an open source software by Apache. It divides and storages Big Data ac
  \\
  Hadoop is made up in three diffrent parts. 
   \\
-  1.Hadoop Cluster - new storage place for the data.
+  1.Hadoop Cluster - multipel new storage place for the data that are divided into one master node and several server nodes.
   \\
   2.Hadoop Distributed File Systems - File Systems that are resposible for storing data across multipel maschines.
   \\
   3.Map and Reduce - Main funktion which analyses and manages data on Hadoop Clusters.
 \subsubsection*{Map Reduce}
-a few words to Map Reduce
+The Map and Reduce prozess is the main funktion of Hadoop. After the divsion of data across multipel clusters, it maps similar datasets togehter into a new cluster, provided by Hadoop. Later on it analyses and reduces the data till the main sence. This data is combined toghter into the output.
+\\
+Hadoop Users need to implemnt the rules for the map and reduce process. All the other parts of the function such as sort and store are already available, when Hadoop is getting istalled.
+\\
+\\
+Ambari and Chukwa both presuppose a basic understanding of Haddop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation. During our paper we are going to talk a lot about Clusters, by this we will always refer to the Hadoop Clusters. 
