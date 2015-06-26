@@ -1,10 +1,10 @@
 \subsection{How is the concept of monitoring implemented in Ambari and Chukwa?}
-Ambari is an open spurce framework that allows the User to monitore, manage and install Hadoop. 
+Ambari is an open source framework that allows the User to monitore, manage and install Hadoop. It has the abilitie to start, stop and configuratet Hadoop processes automaticly on clusters. 
 \\
-Ambari can be divided in two parts. First the Amabri Web which is the main plattform for users to log in and give up request that should be run throug Ambari. Secondly the Amabri Server, which is divided into smaller parts itself. The API or REST API is connected to different Web applications, the most important one the Ambari Web. Other interfaces like Microsoft System Center, are applications that allos the user to analyse the data forthermore the capabilietie of Hadoop. Amabri Server installs on each cluster an Ambari Agent, that gives every few seconds a heartbeat to the server; the server answers with an instruction for the Agengt or it sends a confermation about his current lifestatus. 
+Ambari is divided in two parts. First the Amabri Web which is the main plattform for users to log in and give up request that should be run throug Ambari. Secondly the Amabri Server, which is divided into smaller parts itself. The API or REST API is connected to different Web applications, the most important oneof this is Ambari Web. Other interfaces like Microsoft System Center, are applications that allows the user to analyse the data forthermore the capabilietie of Hadoop. The results of the analyse is accsessable through Ambari Web.
+\\
+The connection between Ambari and Hadoop is done by the Ambari Agents. Amabri Server installs on each cluster an Ambari Agent, that gives every few seconds a heartbeat to the server; the server answers with an instruction for the Agent or it sends a confermation about his current lifestatus. 
 \\
 Garaphic 
-\\
-To explain the process of monitoring by Ambari we wrote our own scenario. Steps Amabri will fullfile if one the Hadoop Clusters fails.
-\\
-Essencially, if one of the Clusters fail, the Agent on it would be movend into the inactiv state. This means it would not be able to send an heartbeat to the Ambari server. Amabri server would noticed this, in the worst case scenario, in two secondes, and start an repairing process. The User does not have to worry about the data that was on this broken cluster, because of the map and reduce prinzip there are two more copies of this data in our distributed system. NACHLESEN NOCHMAL 
+\\ 
+The concept of monitoring is given in two spezific ways with Ambari. Ambari has the knowling about any cluster helat and his data. It can provide and improve the health situation of a Hadoop cluster and analyse the data in ways then are usefull for the user. Ambari Web Interface gives a brief overwiev about the both oporations in dashboards. Furthermore there are settings that each user can choose manually to get the most of Ambari.
