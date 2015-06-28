@@ -3,23 +3,22 @@ As Internet Applications get bigger and bigger, more and more servers get involv
 
 
 \subsection{Definitions}
-Monitoring is aprocess, that controlles, interactes and manages other processes. It has the abilitie to prevent and find foult to repair them.
+Monitoring is a process, which controlles, interactes and manages other processes. It has the abilitie to prevent and find fauliers and repair them.
 \\
-Ambari is an open source framework that allows to controll, manage, provide and install Hadoop Cluster easily. 
+Ambari is an open source framework that allows to controll, manage, provide and install Hadoop Cluster easily, with his Web-Interface.
 \\
 Chukwa: Jan !!!
 
 \subsection{Structure of this paper}
-First of all we intend to explain the basic concept of Hadoop and  the map and reduce process because it is necessary for both of our main topics, Ambari and Chukwa. In the second step we will introduce our research question and answer them. Finally we will give a brief summary and explain our counclusion on this topic.
+First of all we intend to explain the basic concept of Hadoop and the map and reduce process because it is necessary for both of our main topics, Ambari and Chukwa. In the second step we will introduce our research question and answer them. Finally we will give a brief summary and explain our counclusion to our  topic.
 
 \subsection{Literature Review}
-	As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarize the research and review process.
-	Utilizing Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost}.
+Our research prozess is mostly based on the Website information on Amabri and Chukwa. They document very properly all important information on maintance, architecture and installaion of the aplications. The second comman research field was the TU online Database maschine, for journals and articels. We needed to understand the monitoring process and Hadoop in general to explain how Ambari and Chukwa involved with them.
 	
 \subsection{Hadoop}
-Hadoop is an open source software by Apache. It divides and storages Big Data across multipel smaller clusters, by copiing them three times. This concept implais a high fault tolorance. 
+Hadoop is an open source software by Apache for storing and analysing data. It divides and storages Big Data across multipel smaller clusters, by copiing them three times. This concept implais a high fault tolorance, if one of the clusters fail.
  \\
- Hadoop is made up in three diffrent parts. 
+ Hadoops Architekture is divided in many parts. To understand Ambari and Chukwa, the three of the following parts will be enough.
   \\
   1.Hadoop Clusters are multipel new storage places for the data. They are divided into one master node and several server nodes.
   \\
@@ -27,9 +26,9 @@ Hadoop is an open source software by Apache. It divides and storages Big Data ac
   \\
   3.Map and Reduce is the main funktion which analyses and manages data on Hadoop Clusters.
 \subsubsection*{Map Reduce}
-The Map and Reduce prozess is the main funktion of Hadoop. After the divsion of data across multipel clusters, it maps similar datasets togehter into a new cluster, provided by Hadoop. Later on it analyses and reduces the data till the main sence. This data is combined toghter into the output.
+The Map and Reduce process is the main function of Hadoop. After the divsion of data across multipel clusters, it maps similar datasets togehter into a new cluster. Later on it analyses and reduces the data till the main sence. This data is getting combined toghter into the output. 
 \\
 Hadoop Users need to implemnt the rules for the map and reduce process. All the other parts of the function such as sort and store are already available, when Hadoop is getting istalled.
 \\
 \\
-Ambari and Chukwa both presuppose a basic understanding of Haddop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation. During our paper we are going to talk a lot about Clusters, by this we will always refer to the Hadoop Clusters. 
+Ambari and Chukwa both presuppose a basic understanding of Haddop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation of monitoring. 
