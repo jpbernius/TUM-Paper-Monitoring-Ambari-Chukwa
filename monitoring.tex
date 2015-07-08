@@ -1,10 +1,33 @@
 \documentclass{acm_proc_article-sp}
 \usepackage[english,ngerman]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{abbrevs}
+\usepackage{url}
+
+\usepackage[
+pdftex,colorlinks=false,
+bookmarks=true,b
+ookmarksopen=true,
+bookmarksopenlevel=0,
+plainpages=false,
+bookmarksnumbered=true,
+hyperindex=false,
+pdfstartview=,
+pdfauthor={Jan Philip Bernius, Ekaterina Sebina},
+pdftitle={Monitoring: Ambari and Chukwa}
+]{hyperref}
+
+
+%% ABBREVIATIONS
+\newabbrev\isds{Internet-scale Distributed Systems (ISDS)}[ISDS]
+\newabbrev\amb{Apache \textit{Ambari}}[\textit{Ambari}]
+\newabbrev\chuk{Apache \textit{Chukwa}}[\textit{Chukwa}]
+
 
 \begin{document}
 \title{Monitoring: Ambari and Chukwa}
 \subtitle{Seminar: Internet-scale Distributed Systems}
+
 \numberofauthors{2}
 
 \author{
@@ -13,18 +36,21 @@
 Jan Philip Bernius\\
        \affaddr{Technische Universität München}\\
        \affaddr{Department of Computer Science}\\
-       \email{janphilip.bernius@tum.de}
+       \email{\href{mailto:janphilip.bernius@tum.de}{janphilip.bernius@tum.de}}
 % 2nd. author
 \alignauthor
  Ekaterina Sebina\\
        \affaddr{Technische Universität München}\\
        \affaddr{Department of Computer Science}\\
-       \email{katie.sebina@tum.de}
+       \email{\href{mailto:katie.sebina@tum.de}{katie.sebina@tum.de}}
 }
 
 \date{15 July 2015}
 
 \maketitle
+
+%TODO REMOVE!
+\nocite{*}
 
 \begin{abstract}
 \input{chapters/abstract}	
