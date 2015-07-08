@@ -6,12 +6,12 @@ As Internet Applications get bigger and bigger, more and more servers get involv
 
 \textit{Monitoring} is a process, which controls, interacts and manages other processes. It has the ability to locate, prevent and repair failures. It is an important strategy for availability and security.
 
-Apache \textit{Ambari} is an open source framework that allows to control, manage, provide and install Hadoop Cluster easily from the included Web-Interface.
+\amb is an open source framework that allows to control, manage, provide and install Hadoop Cluster easily from the included Web-Interface.
 
-Apache \textit{Chukwa} is a large-scale Log Collection and Management System. It is specialised to collect Log files as well as Application Metrics from distributed Clusters.
+\chuk is a large-scale Log Collection and Management System. It is specialised to collect Log files as well as Application Metrics from distributed Clusters.
 
 \subsection{Structure of this paper}
-First, the concepts of Hadoop and Map Reduce~(\ref{subsec:Hadoop}) are explained, these concepts are the basis of the techniques introduced in this paper. Second, the concept of monitoring~(\ref{subsec:ConceptMonitoring}) is introduced and two interpretations and implementations, Apache Systems \textit{Ambari} and \textit{Chukwa} are explained~(\ref{subsec:Implementation}) in more detail. Thirdly, a comparison~(\ref{subsec:Differentiation}) is made and, lastly, a conclusion~(\ref{sec:Conclusion}) is drawn.
+First, the concepts of Hadoop and Map Reduce~(\ref{subsec:Hadoop}) are explained, these concepts are the basis of the techniques introduced in this paper. Second, the concept of monitoring~(\ref{subsec:ConceptMonitoring}) is introduced and two interpretations and implementations, Apache Systems \amb and \chuk are explained~(\ref{subsec:Implementation}) in more detail. Thirdly, a comparison~(\ref{subsec:Differentiation}) is made and, lastly, a conclusion~(\ref{sec:Conclusion}) is drawn.
 
 \subsection{Literature Review}
 	As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarize the research and review process.
@@ -23,7 +23,7 @@ First, the concepts of Hadoop and Map Reduce~(\ref{subsec:Hadoop}) are explained
 \label{subsec:Hadoop}
 Hadoop is an open source software by Apache for storing and analysing data. It divides and storages Big Data across multipel smaller clusters, by copiing them three times. This concept implais a high fault tolorance, if one of the clusters fail.
  \\
- Hadoops Architekture is divided in many parts. To understand Ambari and Chukwa, the three of the following parts will be enough.
+ Hadoops Architekture is divided in many parts. To understand \amb and \chuk, the three of the following parts will be enough.
   \\
   1.Hadoop Clusters are multipel new storage places for the data. They are divided into one master node and several server nodes.
   \\
@@ -34,6 +34,6 @@ Hadoop is an open source software by Apache for storing and analysing data. It d
 The Map and Reduce process is the main function of Hadoop. After the divsion of data across multipel clusters, it maps similar datasets togehter into a new cluster. Later on it analyses and reduces the data till the main sence. This data is getting combined toghter into the output. 
 \\
 Hadoop Users need to implemnt the rules for the map and reduce process. All the other parts of the function such as sort and store are already available, when Hadoop is getting istalled.
-\\
-\\
-Ambari and Chukwa both presuppose a basic understanding of Haddop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation of monitoring. 
+
+
+\amb and \chuk both presuppose a basic understanding of Haddop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation of monitoring. 
