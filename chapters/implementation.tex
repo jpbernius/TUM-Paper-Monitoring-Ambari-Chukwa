@@ -2,9 +2,9 @@
 \label{subsec:Implementation}
 
 \subsubsection{Ambari}
-\amb is an open source framework that allows the User to monitore, manage and install Hadoop. It has the abilitie to start, stop and configuratet Hadoop processes automaticly on clusters, without any intervination of the user.\cite{Sako2013}
+\amb is an open source framework that allows the User to monitore, manage and install Hadoop. It has the abilitie to start, stop and configuratet Hadoop processes automaticly on clusters, without any intervination of the user.\amb was founded to simplifie the use of Hoodop. \cite{Sako2013}
 \\
-\amb is divided in two parts. First the \amb Web which is the main platform for users to log in and give up request that should be run through \amb. Secondly the \amb Server, which is divided into smaller parts itself. The API or REST API is connected to different Web applications, the most important one of this is \amb Web. Other interfaces like Microsoft System Center, are applications that allows the user to analyse the data furthermore the capability of Hadoop. The results of the analyse is accessible through \amb Web.
+\amb is divided in two parts. First the \amb Web which is the main platform for Users to log in and give up request that should be run through \amb. Secondly the \amb Server, which is divided into smaller parts itself. The API or REST API is connected to different Web applications, the most important one of this is \amb Web. Other interfaces like Microsoft System Center, are applications that allows the user to analyse the data furthermore the capability of Hadoop. The results of the analyse is accessible through \amb Web.
 \\
 The connection between \amb and Hadoop is done by the \amb Agents. Amabri Server installs on each cluster an \amb Agent, that gives every few seconds a heartbeat to the server; the server answers with an instruction for the Agent or it sends a confermation about his current lifestatus. 
 \\
