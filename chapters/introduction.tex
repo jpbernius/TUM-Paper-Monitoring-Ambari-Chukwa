@@ -1,37 +1,43 @@
 %TODO: Introduction
-As Internet Applications get bigger and bigger, more and more servers get involved in the system and Applications will run on multiple Servers on parallel. Further the number of running nodes will vary based on user number and activity. As these systems get impossible to administer by hand, automating the process is very important. Systems tend to fail from time to time, therefore it is very important to notice failure and fix occurring problems.
+As Internet Applications get bigger and bigger, more and more servers get involved in the system and Applications will run on multiple Servers on parallel. Further the number of running nodes will vary based on user number and activity. As these systems get impossible to administer by hand, automating the process is very important. Systems tend to fail from time to time, therefore it is very important to notice failure and fix occurring problems. Jerome Boulon, Principle Engineer at Yahoo! and PPMC in the Chukwa team, stated, that ``Large distributed systems can fail in complicated and subtle ways.''~\cite{Boulonb} Monitoring allows to notice, archive failures. It provides Developers and System Administrators with details about occurring failures and errors. The following paper will describe and compare two monitoring Systems, \amb and \chuk. Both systems use \hadoop and the \mr method.
 
 
 \subsection{Definitions}
 
 \textit{Monitoring} is a process, which controls, interacts and manages other processes. It has the ability to locate, prevent and repair failures. It is an important strategy for availability and security.
+%TODO mehr. mindestens verdoppeln.
 
 \amb is an open source framework that allows to control, manage, provide and install Hadoop Cluster easily from the included Web-Interface.
 
 \chuk is a large-scale Log Collection and Management System. It is specialised to collect Log files as well as Application Metrics from distributed Clusters.
 
 \subsection{Structure of this paper}
-First, the concepts of Hadoop and Map Reduce~(\ref{subsec:Hadoop}) are explained, these concepts are the basis of the techniques introduced in this paper. Second, the concept of monitoring~(\ref{subsec:ConceptMonitoring}) is introduced and two interpretations and implementations, Apache Systems \amb and \chuk are explained~(\ref{subsec:Implementation}) in more detail. Thirdly, a comparison~(\ref{subsec:Differentiation}) is made and, lastly, a conclusion~(\ref{sec:Conclusion}) is drawn.
+First, the concepts of Hadoop and Map Reduce~(\ref{subsec:Hadoop}) are explained, these concepts are the basis of the techniques introduced in this paper. 
+Second, the concept of monitoring~(\ref{subsec:ConceptMonitoring}) is introduced and two interpretations and implementations, Apache Systems \amb and \chuk are explained~(\ref{subsec:Implementation}) in more detail. 
+Third, a comparison~(\ref{subsec:Differentiation}) is made and, lastly, a conclusion~(\ref{sec:Conclusion}) is drawn.
 
 \subsection{Literature Review}
-	As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarise the research and review process.
-	
-	The research started on the self description on the project websites and continued using technical documentation, describing the underlying architecture of both systems.
-	Further, Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost} were utilised to find more in-depth material, including the research these projects are based on.
+As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarise the research and review process.
+
+The research started on the self description on the project websites and continued using technical documentation, describing the underlying architecture of both systems.
+Further, Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost} were utilised to find more in-depth material, including the research these projects are based on.
 	
 \subsection{Hadoop}
 \label{subsec:Hadoop}
 Hadoop is an open source software by Apache for storing and analysing data. It divides and storages Big Data across multipel smaller clusters, by copying them three times. This concept implies a high fault tolerance, if one of the clusters fail.
- \\
- Hadoops Architecture is divided in many parts. To understand \amb and \chuk, the three of the following parts will be enough.
+
+Hadoops Architecture is divided in many parts. To understand \amb and \chuk, the three of the following parts will be enough.
   \\
-  1.Hadoop Clusters are multipel new storage places for the data. They are divided into one master node and several server nodes.
-  \\
-  2.Hadoop Distributed File Systems (HDFS), are file systems that are responsible for storing data across multipel machines.
-  \\
-  3.Map and Reduce is the main function which analyses and manages data on Hadoop Clusters.
+  \begin{enumerate}
+  	\item Hadoop Clusters are multipel new storage places for the data. They are divided into one master node and several server nodes.
+  	\item \hdfs, are file systems that are responsible for storing data across multipel machines.
+  	\item Map and Reduce is the main function which analyses and manages data on Hadoop Clusters.
+  \end{enumerate}
+
 \subsubsection*{Map Reduce}
-The Map and Reduce process is the main function of Hadoop. After the division of data across multipel clusters, it maps similar datasets together into a new cluster. Later on it analyses and reduces the data till the main sense. This data is getting combined together into the output. 
+The Map and Reduce process is the main function of Hadoop. After the division of data across multipel clusters, it maps similar datasets together into a new cluster. 
+%TODO https://de.wikipedia.org/wiki/Rechnerverbund Definition von Cluster nachlesen. so macht das keinen Sinn
+Later on it analyses and reduces the data till the main sense. This data is getting combined together into the output. 
 \\
 Hadoop Users need to implement the rules for the map and reduce process. All the other parts of the function such as sort and store are already available, when Hadoop is getting installed.
 
