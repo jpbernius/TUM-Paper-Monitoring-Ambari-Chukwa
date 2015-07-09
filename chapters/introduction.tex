@@ -14,26 +14,26 @@ As Internet Applications get bigger and bigger, more and more servers get involv
 First, the concepts of Hadoop and Map Reduce~(\ref{subsec:Hadoop}) are explained, these concepts are the basis of the techniques introduced in this paper. Second, the concept of monitoring~(\ref{subsec:ConceptMonitoring}) is introduced and two interpretations and implementations, Apache Systems \amb and \chuk are explained~(\ref{subsec:Implementation}) in more detail. Thirdly, a comparison~(\ref{subsec:Differentiation}) is made and, lastly, a conclusion~(\ref{sec:Conclusion}) is drawn.
 
 \subsection{Literature Review}
-	As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarize the research and review process.
+	As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarise the research and review process.
 	
 	The research started on the self description on the project websites and continued using technical documentation, describing the underlying architecture of both systems.
-	Further, Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost} were utilised to find more indeppth material, including the research these projects are based on.
+	Further, Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost} were utilised to find more in-depth material, including the research these projects are based on.
 	
 \subsection{Hadoop}
 \label{subsec:Hadoop}
-Hadoop is an open source software by Apache for storing and analysing data. It divides and storages Big Data across multipel smaller clusters, by copiing them three times. This concept implais a high fault tolorance, if one of the clusters fail.
+Hadoop is an open source software by Apache for storing and analysing data. It divides and storages Big Data across multipel smaller clusters, by copying them three times. This concept implies a high fault tolerance, if one of the clusters fail.
  \\
- Hadoops Architekture is divided in many parts. To understand \amb and \chuk, the three of the following parts will be enough.
+ Hadoops Architecture is divided in many parts. To understand \amb and \chuk, the three of the following parts will be enough.
   \\
   1.Hadoop Clusters are multipel new storage places for the data. They are divided into one master node and several server nodes.
   \\
-  2.Hadoop Distributed File Systems (HDFS), are file systems that are resposible for storing data across multipel maschines.
+  2.Hadoop Distributed File Systems (HDFS), are file systems that are responsible for storing data across multipel machines.
   \\
-  3.Map and Reduce is the main funktion which analyses and manages data on Hadoop Clusters.
+  3.Map and Reduce is the main function which analyses and manages data on Hadoop Clusters.
 \subsubsection*{Map Reduce}
-The Map and Reduce process is the main function of Hadoop. After the divsion of data across multipel clusters, it maps similar datasets togehter into a new cluster. Later on it analyses and reduces the data till the main sence. This data is getting combined toghter into the output. 
+The Map and Reduce process is the main function of Hadoop. After the division of data across multipel clusters, it maps similar datasets together into a new cluster. Later on it analyses and reduces the data till the main sense. This data is getting combined together into the output. 
 \\
-Hadoop Users need to implemnt the rules for the map and reduce process. All the other parts of the function such as sort and store are already available, when Hadoop is getting istalled.
+Hadoop Users need to implement the rules for the map and reduce process. All the other parts of the function such as sort and store are already available, when Hadoop is getting installed.
 
 
-\amb and \chuk both presuppose a basic understanding of Haddop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation of monitoring. 
+\amb and \chuk both presuppose a basic understanding of Hadoop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation of monitoring. 
