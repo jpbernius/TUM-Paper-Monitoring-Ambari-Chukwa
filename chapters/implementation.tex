@@ -29,14 +29,6 @@ This pice of Java Software is constantly gathering Application Logs and Metrics 
 This can by \textit{syslog} as well as an Application specific location. 
 Each Source is fetched by an so called \textit{Adaptor}.~\cite{ChukwaAdminAgent}
 
-The Agent is then pushing the data to a so called \textit{Collector}, as described on Figure~\ref{fig:ChukwaArchitecture}.
-This is another pice of Java Software, running on a dedicated \chuk instance. 
-The \textit{Collector}s job is collecting data from multiple Nodes in the Cluster, as well as archiving and post-processing the data.~\cite{Jose2014}
-First, the collected information is stored in \textit{Data Sink} Files. 
-Here, data from multiple Nodes gets written in the same file, which can be seen as a Queue for processing.
-Every few minutes, the \textit{Data Sink} File is closed. (Files cannot be processed, while data is written to them.)
-All available \textit{Data Sink} files will be processed by a pair of Demux \mr jobs.~\cite{Boulona} 
-
 \begin{figure}[hbt]
   \centering
   % https://docs.google.com/open?id=11xCUWZ94zbUa4eqhoScjMmfIL2pI-IkDx02qvcCXohY
@@ -45,4 +37,20 @@ All available \textit{Data Sink} files will be processed by a pair of Demux \mr 
   \label{fig:ChukwaArchitecture}
 \end{figure}
 
-``The first job simply archives all the collected data, without processing or interpreting it. The second job parses out structured data from some of the logs, and loads this structured data into a data store.''~\cite{Boulona} 
+The Agent is then pushing the data to a so called \textit{Collector}, as described on Figure~\ref{fig:ChukwaArchitecture}.
+This is another pice of Java Software, running on a dedicated \chuk instance. 
+The \textit{Collector}s job is collecting data from multiple Nodes in the Cluster, as well as archiving and post-processing the data.~\cite{Jose2014}
+First, the collected information is stored in \textit{Data Sink} Files. 
+Here, data from multiple Nodes gets written in the same file, which can be seen as a Queue for processing.
+Every few minutes, the \textit{Data Sink} File is closed. (Files cannot be processed, while data is written to them.)
+All available \textit{Data Sink} files will be processed by a pair of Demux \mr jobs.~\cite{Boulona} 
+
+
+As desribed by Boulon et al., the \mr processing should produce insights about ``needs for accounting, capacity planning, performance characterization, utilization'', ``reduc[e] the number and extent of outages'', ``reduc[e] the number of false alerts and increasing the value and confidence level of true alerts'' and ``reduc[e] the time and effort required to identify and resolve cluster issues.''\cite{Boulonb}
+
+To achieve these goals, ``the first job simply archives all the collected data, without processing or interpreting it. The second job parses out structured data from some of the logs, and loads this structured data into a data store.''~\cite{Boulona} 
+
+% reduce can be customised. https://chukwa.apache.org/docs/r0.4.0/programming.html
+
+\paragraph{The Storage}
+
