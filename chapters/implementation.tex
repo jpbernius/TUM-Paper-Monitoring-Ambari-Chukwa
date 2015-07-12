@@ -23,6 +23,19 @@ The concept of monitoring is given in two specific ways with \amb\. \amb has the
 It is built to support log handling on scalable Hadoop clusters. \chuk is developed at Yahoo! and ``is built on top of HDFS and Map-Reduce.''~\cite{Rabkin2008a}
 Its main non-functional goals are low footprint on System Usage (less than 5\%) and minimal changes to user workflow.~\cite{Rabkin2010}
 
+\paragraph{The process}
+For processing Log files and Application Metrics, \chuk starts on the producing machine, which is running a \chuk Agent. 
+This pice of Java Software is constantly gathering Application Logs and Metrics from pre-configured locations. 
+This can by \textit{syslog} as well as an Application specific location. 
+Each Source is fetched by an so called \textit{Adaptor}.~\cite{ChukwaAdminAgent}
+
+The Agent is then pushing the data to a so called \textit{Collector}, as described on Figure~\ref{fig:ChukwaArchitecture}.
+This is another pice of Java Software, running on a dedicated \chuk instance. 
+The \textit{Collector}s job is collecting data from multiple Nodes in the Cluster, as well as archiving and post-processing the data.~\cite{Jose2014}
+First, the collected information is stored in \textit{Data Sink} Files. 
+Here, data from multiple Nodes gets written in the same file, which can be seen as a Queue for processing.
+Every few minutes, the \textit{Data Sink} File is closed. (Files cannot be processed, while data is written to them.)
+All available \textit{Data Sink} files will be processed by a pair of Demux \mr jobs.~\cite{Boulona} 
 
 \begin{figure}[hbt]
   \centering
@@ -31,3 +44,5 @@ Its main non-functional goals are low footprint on System Usage (less than 5\%) 
   \caption{Chukwas Architecture~\cite{Rabkin2008}}
   \label{fig:ChukwaArchitecture}
 \end{figure}
+
+``The first job simply archives all the collected data, without processing or interpreting it. The second job parses out structured data from some of the logs, and loads this structured data into a data store.''~\cite{Boulona} 
