@@ -54,3 +54,8 @@ To achieve these goals, ``the first job simply archives all the collected data, 
 
 \paragraph{The Storage}
 
+The \mr jobs will \demux data out of the \textit{sink} files and into structured storage.~\cite{Boulonb} 
+\chuk supports multiple, pluggable storage formats, which ``also aids integration with legacy systems. Chukwa also offers the flexibility to support other data sources, such as syslog or local IPC.''~\cite{Rabkin2010a} 
+
+Currently, \chuk uses \hdfs files, ``one file per cluster, per data type, and time period. (..) [Which is only a] interim solution''~\cite{Boulona} 
+The development team is evaluating different data-stores, which are more suitable for the purpose and allow structured querying, also.
