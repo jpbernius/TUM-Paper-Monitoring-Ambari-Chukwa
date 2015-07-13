@@ -59,3 +59,6 @@ The \mr jobs will \demux data out of the \textit{sink} files and into structured
 
 Currently, \chuk uses \hdfs files, ``one file per cluster, per data type, and time period. (..) [Which is only a] interim solution''~\cite{Boulona} 
 The development team is evaluating different data-stores, which are more suitable for the purpose and allow structured querying, also.
+Possible storage systems for the future include Hive, HBase or Hypertable. Also local installations of relational Databases might be an option.~\cite{Boulonb} Last option depends on the amount of data stored.
+
+\textit{Hive} is potentially a good fit. It is still based on \hdfs files, but adds a new layer of organisational functionality like ``Organization into Tables'' or a ``SQL like query language over object data stored in Tables.''~\cite{Sarma08}
