@@ -4,8 +4,25 @@
 \amb and \chuk are, while both being Monitoring Systems, engineered for different use-cases. 
 As stated in \ref{subsec:ConceptMonitoring}, the concept of monitoring allows different applications in the domain of \isds. 
 
+\subsubsection{Ambari}
 \amb was founded to simplify the use of Hadoop Systems. It offers management, monitoring and intervening process on Hadoop Clusters.\cite{Hortonworks2013} 
 
+After-all, \amb fulfils two tasks on a \hadoop cluster. 
+First, \amb provides metrics about a cluster in general, like number of running hosts, cluster health, overal RAM/CPU Usage, Network Traffic etc. \amb also provides Host specific Metrics.
+\\
+Second, \amb can perform Actions on the entire Cluster, a group of Hosts or individual hosts. 
+%TODO extend on actions
+
+\subsubsection{Chukwa}
 \chuk offers extensive data collection capabilities, especially optimised for storing, archiving and analysing ``a large and open-ended set of time series metrics and logs.''~\cite{Boulona}
 
-In comprehension of both applications, Ambari approaches a wilder spectrum trough out of all Hadoop tasks, while Chukwa is specialised on storing and analysing Hadoop Data. Both differ in their core range of use for Hadoop, in connection of monitoring. Amabri is not capable of monitoring the actual data value that is stored on the clusters that are getting observed, but it can monitor the health of those.\cite{ApacheSoftwareFoundation2015} While Chukwa has the ability to interpreter and analyse data on its monitored clusters.
+Different to \amb, \chuk does only perform read operations on the hosts. Its highly configurable Agent will upload all data to the Collector, where processing takes place.
+
+
+Even though some Use Cases~(\ref{netflix}) show that it is possible, \chuk does not aim to provide Real-Time information. However, after processing is done, the data is available in a structured form and can be stored forever. \mr and \demux also allows automated analysis and error detection as shown in the Use Case~(\ref{netflix}). This allows reporting to responsible System Administrators or Software- Engineers in a efficient manner. It also provides detailed error information, as the related log information is available.
+
+\subsubsection{Comparison}
+%TODO rethink if it fits this way
+In comparison of both applications, \amb approaches a wilder spectrum trough out of all Hadoop tasks, while \chuk is specialised on storing and analysing \hadoop Data. Both differ in their core range of use for \hadoop, in connection of monitoring. \amb is not capable of monitoring the actual data value that is stored on the clusters that are getting observed, but it can monitor the health of those.\cite{ApacheSoftwareFoundation2015} While \chuk has the ability to interpreter and analyse data on its monitored clusters.
+
+Both Systems offer \emph{complementary} services. \amb can do real-time management of the cluster and provide real-time system status. \chuk will archive system- and Application-Log-Information and put it in structured \hdfs storage.
