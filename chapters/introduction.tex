@@ -1,12 +1,12 @@
 %TODO: Introduction
-As internet applications are increasing, more and more servers get to be adopted into distributed systems. Applications need to be run on multiple servers parallelto fullfille their resposibilities. Further the number of running nodes will vary based on user number and activity. As these systems get impossible to administer by hand, automating the process is very important. Systems tend to fail from time to time, therefore it is very important to notice failure and fix occurring problems in advance. Jerome Boulon, Principle Engineer at Yahoo! and PPMC in the Chukwa team, stated, that ``Large distributed systems can fail in complicated and subtle ways.''~\cite{Boulonb} Monitoring allows to notice, archive failures. It provides Developers and System Administrators with details about occurring failures and errors. The following paper will describe and compare two monitoring Systems, \amb and \chuk. Both systems use \hadoop and the \mr method as basic component.
+As internet applications are increasing, more and more servers get to be adopted into distributed systems.\cite{Dinu2011} Applications need to be run on multiple servers parallel to fulfil their responsibilities. Further the number of running nodes will vary based on user number and activity.\cite{Jammes2012} As these systems get impossible to administer by hand, automating the process is very important.\cite{Jammes2012} Systems tend to fail from time to time, therefore it is very important to notice failure and fix occurring problems in advance. Jerome Boulon, Principle Engineer at Yahoo! and PPMC in the Chukwa team, stated, that ``Large distributed systems can fail in complicated and subtle ways.''~\cite{Boulonb} Monitoring allows to notice, archive failures. It provides Developers and System Administrators with details about occurring failures and errors. The following paper will describe and compare two monitoring Systems, \amb and \chuk. Both systems use \hadoop and the \mr method as basic component.
 
 
 \subsection{Definitions}
 
-\textit{Monitoring} is a process, which controls, interacts and manages other processes and systems. It has the ability to locate, prevent and repair failures in advance. It is an important strategy for availability and security of procedures. Monitroing is always running parallel to activities and gives the user the ability of a faster failuer cooper, that possiblie peopel could do.
+\textit{Monitoring} is a process, which controls, interacts and manages other processes and systems. It has the ability to locate, prevent and repair failures in advance. It is an important strategy for availability and security of procedures. Monitoring is always running parallel to activities and gives the user the ability of a faster failure cooper, that possibly people could do.\cite{Jammes2012}
 
-\amb is an open source framework that allows to control, manage, provide and install Hadoop Cluster easily from the included Web-Interface. It simplifies the use of Hadoop.
+\amb is an open source framework that allows to control, manage, provide and install Hadoop Cluster easily from the included Web-Interface. It simplifies the use of Hadoop.\cite{Hortonworks2013}
 
 \chuk is a large-scale Log Collection and Management System. It is specialised to collect Log files as well as Application Metrics from distributed Clusters.
 
@@ -19,26 +19,25 @@ Third, a comparison~(\ref{subsec:Differentiation}) is made and, lastly, a conclu
 As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarise the research and review process.
 
 The research started on the self description on the project websites and continued using technical documentation, describing the underlying architecture of both systems.
-Further, Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost} were utilised to find more in-depth material, including the research these projects are based on. A lot of details about the use and monitroing process of Ambari were found at Hortenworks.
+Further, Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost} were utilised to find more in-depth material, including the research these projects are based on. A lot of details about the use and monitoring process of Ambari were found at Hortenworks.
 	
 \subsection{Hadoop}
 \label{subsec:Hadoop}
-Hadoop is an open source software by Apache for storing and analysing data. It divides and storages Big Data across multipel smaller clusters, by copying them three times with the map and reduce function. This concept implies a high fault tolerance, if one of the clusters fail.
+Hadoop is an open source software by Apache for storing and analysing data.\cite{Dagli2014} It divides and storages Big Data across multiple smaller clusters, by copying them three times with the map and reduce function. This concept implies a high fault tolerance, if one of the clusters fail.\cite{Dagli2014}
 
-Hadoops Architecture is divided in many parts. To understand \amb and \chuk, the three main parts will be enough.
+Hadoops Architecture is divided in many parts. To understand \amb and \chuk, the three main parts will be enough.\cite{Dagli2014}
   \\
   \begin{enumerate}
-  	\item Hadoop Clusters are multipel new storage places for the data. They are divided into one master node and several server nodes, that are fullfieling the tasks of the master node.
-  	\item \hdfs, are file systems that are responsible for storing data across multipel machines.
-  	\item Map and Reduce is the main function which maps and reduces data till the core mean on all Hadoop clusters.
+  	\item Hadoop Clusters are multiple new storage places for the data. They are divided into one master node and several server nodes, that are fulfilling the tasks of the master node.\cite{Dagli2014}
+  	\item \hdfs, are file systems that are responsible for storing data across multiple machines.\cite{Dagli2014}
+  	\item Map and Reduce is the main function which maps and reduces data till the core mean on all Hadoop clusters.\cite{Dagli2014}
   \end{enumerate}
 
 \subsubsection*{Map Reduce}
-The Map and Reduce process is the main function of Hadoop. After the division of data across multipel clusters, it maps similar datasets together into one cluster. 
-%TODO https://de.wikipedia.org/wiki/Rechnerverbund Definition von Cluster nachlesen. so macht das keinen Sinn!! Jan dann schreib diesen Abschnitt bitte.
-Later on it analyses and reduces the data till the main sense. This data is getting combined together into the output. 
+The Map and Reduce process is the main function of Hadoop. After the division of data across multiple clusters, it maps similar datasets together into one cluster. 
+Later on it analyses and reduces the data till the main sense. This data is getting combined together into the output. \cite{Dagli2014}
 \\
-Hadoop Users need to implement the rules for the map and reduce process. All the other parts of the function such as sort and store are already available, when Hadoop is getting installed.
+Hadoop Users need to implement the rules for the map and reduce process. All the other parts of the function such as sort and store are already available, when Hadoop is getting installed.\cite{Dagli2014}
 
 
 \amb and \chuk both presuppose a basic understanding of Hadoop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation of monitoring. 
