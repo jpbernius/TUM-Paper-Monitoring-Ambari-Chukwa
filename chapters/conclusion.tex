@@ -1,15 +1,22 @@
 \subsection{Summary}
 
 \subsection{Use Case: Netflix}
-One of the most known users of a \chuk derivate is \textbf{Netflix}, who is using Amazon Web Services to provide their service. 
+One of the most known users of a \chuk derivate is \textbf{Netflix}, who is using \aws to provide their service. A fairly large number of \aws EC2 Instances is deployed, producing about $1.5$ million events per Second during peak hours. This results in about $80$ billion events per day. Most of the events are reflected as log messages, user activity records, system operational data, or any arbitrary data.~\cite{Bae2013}
+
 Netflix is providing lots of its technology as Open-Source software, including their \chuk clone \textit{Suro}. 
 Beside integrations with \noss, Suro offers several modifications to \chuk, which ``grew out of what [Netflix] learned from meeting the operational requirements of running in production over the past few years.''~\cite{Bae2013}
 
 Suro goes beyond Chukwas scope of functionality in the following points:
 \begin{enumerate}
   \item Suro supports ``arbitrary data formats,''~\cite{Bae2013} which allows more types of application to support advanced logging by Suro. A Plug-in System allows customised serialisation and deserialisation code to be run during processing.
+  \item Lots of monitoring metrics are already included within Suro, 
+  \item Integrations with other \noss Tools is included within Suro. This makes it especially easy to use Suro in a Cloud Setup, also using other \noss tools.~\cite{GithubNetflixSuro}
+  \item \label{itm:SutoMultiDest} Dispatching Events to multiple destinations is available with custom configuration as of flexible architecture.~\cite{Bae2013, GithubNetflixSuro} 
+  \item ``Suro supports configurable store-and-forward on both client and collector.''~\cite{Bae2013} Its ``support of flexible retries'' leads to minimised data loss.~\cite{GithubNetflixSuro}
 \end{enumerate}
+Suro still preserves attributes from \chuk like horizontal scalability as well as ``large number of connections, and high throughput''~\cite{GithubNetflixSuro}
 
+Item~\ref{itm:SutoMultiDest} allows Use-Cases like the one described in Figure~\ref{fig:SuroArchitecture}. 
 \label{netflix}
 \begin{figure}[hbt]
   \centering
@@ -19,8 +26,16 @@ Suro goes beyond Chukwas scope of functionality in the following points:
   \label{fig:SuroArchitecture}
 \end{figure}
 
+\begin{figure}[hbt]
+  \centering
+  % https://drive.google.com/open?id=1Nmn-mWvxAwhcB9Vo4nbq0gutnWp0bPcCfBU14KMDVQ8
+  \includegraphics[width=\linewidth,clip=true,trim=0 75mm 0 0]{images/SuroMessageRouter}
+  \caption{Netflix Suro Message Router~\cite{Bae2013}}
+  \label{fig:SuroMessageRouter}
+\end{figure}
 
-\subsection{Feature Research Questions}
+
+\subsection{Future research}
 Current research has not shown, in which extend the two systems \amblong and \chuk can be used in an inter-connected manner, complementing each others services. Managing large, internet-scale clusters, consisting of multiple thousand hosts running \hadooplong can be more automated and controlled with Systems like \amb and \chuk in place, not only controlling the current state, but also managing installed components and archiving system-state information.
 
 Further, an improved way of storing Chukwas log data in a more structured way, allowing live querying, is still be to found. Boulon et al. did look into several options so far~\cite{Boulonb}, but this work has to be continued.
