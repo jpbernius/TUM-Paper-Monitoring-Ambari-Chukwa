@@ -1,5 +1,5 @@
 %TODO: Introduction
-As internet applications are increasing, more and more servers are getting integrated into distributed systems.~\cite{Dinu2011} Applications need to be run on multiple servers in parallel to fulfil their responsibilities. 
+As internet applications are increasing, more and more servers are getting integrated into distributed systems.~\cite{Dinu2011} Applications need to be run on multiple servers in parallel to fulfill their responsibilities. 
 Further, the number of running nodes will vary based on user number and activity.~\cite{Jammes2012} 
 As these systems get impossible to administer by hand, automating the process is very important.~\cite{Jammes2012} 
 Systems tend to fail from time to time, therefore it is very useful to notice failure and fix occurring problems in advance. 
@@ -8,7 +8,7 @@ Jerome Boulon, Principle Engineer at Yahoo! and PPMC in the Chukwa team, stated 
 Monitoring allows to notice and archive failures. 
 The resulting data provides Developers and System Administrators with details about occurring failures and errors. 
 The following paper will describe and compare two monitoring Systems, \amb and \chuk. 
-Both systems use \hadoop and the \mr method as basic component.\cite{ApacheSoftwareFoundation2015}
+Both systems use \hadoop and the \mr method as a basic component.\cite{ApacheSoftwareFoundation2015}
 
 
 \subsection{Definitions}
@@ -17,9 +17,9 @@ Both systems use \hadoop and the \mr method as basic component.\cite{ApacheSoftw
 It has the ability to locate, prevent and repair failures in advance. 
 It is an important strategy for availability and security of procedures. 
 Monitoring is always running parallel to activities and gives the user the ability to repair failures faster, then humans could possibly do manually.\cite{Jammes2012}
-Ford said in 1990 that it is ``an important long-term goal (..) [to incorporate] such monitoring functionality in the highly distributed, ``inteligent'' next generation of [distributed] systems.''~\cite{Ford1990}
+Ford said in 1990 that it is ``an important long-term goal (..) [to incorporate] such monitoring functionality in the highly distributed, ``intelligent'' next generation of [distributed] systems.''~\cite{Ford1990}
 
-\amb is an open source framework that allows to control, manage, provide and install Hadoop Cluster easily from the included Web-Interface. It simplifies the use of Hadoop.\cite{Hortonworks2013}
+\amb is an open source framework that allows to control, manage, provide and install Hadoop cluster easily from the included web-interface. It simplifies the use of Hadoop.\cite{Hortonworks2013}
 
 \chuk is a large-scale Log Collection and Management System. It is specialised to collect Log files as well as Application Metrics from distributed Clusters.
 
@@ -29,7 +29,7 @@ Second, the concept of monitoring~(\ref{subsec:ConceptMonitoring}) is introduced
 Third, a comparison~(\ref{subsec:Differentiation}) is made and, lastly, a conclusion~(\ref{sec:Conclusion}) is drawn.
 
 \subsection{Motivation}
-This paper has been written for the seminar \isdslong at the \tum. Main Goals are studying ``requirements and properties that distinguish Internet-scale distributed systems from other types of distributed systems'' and further how to ``satisfy these requirements at Internet-scale.''~\cite{SeminarInfo} 
+This paper has been written for the seminar \isdslong at the \tum. Main goals are to study ``requirements and properties that distinguish Internet-scale distributed systems from other types of distributed systems'' and further how to ``satisfy these requirements at Internet-scale.''~\cite{SeminarInfo} 
 When introducing systems, which scale to a couple of thousand nodes, it is not only important how the system works, but also how to get such a cluster up and running, check on the clusters health and get more detailed insights of possible failures.
 
 \subsection{Literature Review}
@@ -44,16 +44,16 @@ Further, Library Databases, especially \emph{IEEE Xplore} and \emph{EBSCOhost} w
 
 Hadoops Architecture is divided in many parts. To understand \amb and \chuk, the three main parts will be enough.\cite{Dagli2014}
   \begin{enumerate}
-  	\item \hadoop Clusters are multiple new storage places for the data. They are divided into one master node and several server nodes, that are fulfilling the tasks of the master node.\cite{Dagli2014}
+  	\item \hadoop Clusters are multiple new storage places for the data. They are divided into one master node and several server nodes that are fulfilling the tasks of the master node.\cite{Dagli2014}
   	\item \hdfs, are file systems that are responsible for storing data across multiple machines.\cite{Dagli2014}
-  	\item Map and Reduce is the main function which maps and reduces data until the core mean on all Hadoop clusters.\cite{Dagli2014}
+  	\item \mr is the main function which maps and reduces data until the core mean on all Hadoop clusters.\cite{Dagli2014}
   \end{enumerate}
 
 \paragraph{Map Reduce}
 The \mrlong process is the main function of \hadoop. After the division of data across multiple clusters, it maps similar datasets together into one cluster. 
 Later on it analyses and reduces the data to the core. This data is getting combined together into the output. \cite{Dagli2014}
 
-\hadoop Users need to configure the process for their data and use case. All the other parts of the function such as sort and store are already available when \hadoop is getting installed.\cite{Dagli2014}
+\hadoop Users need to configure the process for their data and use case. All the other parts of the function such as sort and store are already available when \hadoop is being installed.\cite{Dagli2014}
 
 
 \amb and \chuk both presuppose a basic understanding of \hadoop as well as the \mr function. Both applications are powered by Apache and are monitoring processes for \hadoop Systems.They differ in their area of operation of monitoring.\cite{ApacheSoftwareFoundation2015}

@@ -3,13 +3,13 @@
 After defining monitoring and its Use Cases, two Software Solutions for monitoring in an \hadoop environment are introduced.
 
 \subsubsection{Ambari}
-\amb is ``the only 100\% open source framework''~\cite{Sako2013} that allows the User to monitor, manage and install Hadoop.\cite{ApacheSoftwareFoundation2015} It has the ability to start, stop and configure Hadoop processes automatically on clusters, without any intervention of the user.\cite{Hortonworks2013} \amb was founded to simplify the use of Hadoop.\cite{Hortonworks2013}
+\amb is ``the only 100\% open source framework''~\cite{Sako2013} that allows the user to monitor, manage and install Hadoop.\cite{ApacheSoftwareFoundation2015} It has the ability to start, stop and configure Hadoop processes automatically on clusters, without any intervention of the user.\cite{Hortonworks2013} \amb was developed to simplify the use of Hadoop.\cite{Hortonworks2013}
 
-\amb architecture can be divided in connected parts. First the \amb Web which is the main platform for Users to log in and give up request that should be run through Ambari.~\cite{Sako} It builds the main Interface for any interactions between User and Application.\cite{Sako} Through \amb web all the monitoring processes are visualized. 
+\amb architecture can be divided in components. First the \amb Web which is the main platform for users to log in and give up request that should be run through Ambari.~\cite{Sako} It builds the main interface for any interactions between user and application.\cite{Sako} Through \amb Web all the monitoring processes are visualized. 
 
-Secondly, the \amb Server consists out of several components.\cite{Sako} The (REST-) API is connected to different Web applications, the most important one is \amb Web.\cite{Sako} Other interfaces, like Microsoft System Centre, are applications that allow the user to analyse the data. Furthermore the capability of Hadoop or integrate data and conclusions to other programs of the User.\cite{Hortonworks2013} The results of the analysis is accessible through \amb Web on the monitoring screens.\cite{Sako}
+Secondly, the \amb Server consists of several components.\cite{Sako} The (REST-) API is connected to different web applications, the most important one is \amb Web.\cite{Sako} Other interfaces, like Microsoft System Centre, are applications that allow the user to analyse or integrate data and conclusions to other programs of the user.\cite{Hortonworks2013} The results of the analysis is accessible through \amb Web on the monitoring screens.\cite{Sako}
 
-The connection between \amb and \hadoop is done by the \amb Agents.\cite{Sako} During setip, \amb Server will install the \amb Agent Software on each host. The Agent will sent a regular heartbeat to the server for communication. The server answers with an instruction for the Agent or sends a confirmation about his current life-status.\cite{Sako} All hosts are connected to the clusters by \hadoop.\cite{Sako}
+The connection between \amb and \hadoop is done by the \amb Agents.\cite{Sako} During setup, \amb Server will install the \amb Agent Software on each host. The Agent will sent a regular heartbeat to the server for communication. The server answers with an instruction for the Agent or sends a confirmation about his current life-status.\cite{Sako} All hosts are connected to the clusters by \hadoop.\cite{Sako}
 
 \begin{figure}
   \centering
@@ -23,8 +23,8 @@ The concept of monitoring is given in two specific ways with \amb.
 It has knowledge about every nodes health and its data.~\cite{Foley2012} 
 It can provide and improve the health situation of a Hadoop cluster and analyse the data in ways there are useful for the user.~\cite{Foley2012} 
 The user has an overview on the current situation through the Web application.~\cite{Foley2012} 
-\amb divides to monitoring Process in three parts.~\cite{Foley2012} 
-The first one is the List of all the Applications \amb is running on each connected cluster. 
+\amb divides the monitoring process in three parts.~\cite{Foley2012} 
+The first one is the list of all the applications \amb is running on each connected cluster. 
 It shows the name, status and number of clusters that are ok, and the ones that need to get fixed.~\cite{Foley2012} 
 The second part is explaining all the technical details about the application, such as storing space and running time.~\cite{Foley2012} 
 The last part is aimed to show illustratively how long and effective an application has been running on a node.~\cite{Foley2012} 
