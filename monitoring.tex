@@ -4,7 +4,7 @@
 \usepackage{abbrevs}
 \usepackage{url}
 \usepackage{cite}
-%\usepackage{flushend}
+\usepackage{flushend}
 
 \usepackage[
 pdftex,colorlinks=false,
@@ -33,6 +33,24 @@ pdftitle={Monitoring: Ambari and Chukwa}
 \newabbrev\noss{Netflix Open Source Software (OSS)}[Netflix OSS]
 \newabbrev\aws{Amazon Web Services (AWS)}[AWS]
 
+% START BUGFIX abbrevs spacing
+\makeatletter
+\renewcommand\maybe@space@{%
+  % \@tempswatrue % <= this is in the original
+  \maybe@ictrue % <= this is new
+  \expandafter   \@tfor
+    \expandafter \reserved@a
+    \expandafter :%
+    \expandafter =%
+                 \nospacelist
+                 \do \t@st@ic
+  % \if@tempswa % <= this is in the original
+  \ifmaybe@ic % <= this is new
+    \space
+  \fi
+}
+\makeatother
+% END BUGFIX abbrevs spacing
 
 \begin{document}
 \title{Monitoring: Ambari and Chukwa}
@@ -79,8 +97,9 @@ Jan Philip Bernius\\
 \section{Introduction}
 \input{chapters/introduction}
 
-\section{Ambari and Chukwa}
+
 \input{chapters/ambariChukwa}
+
 
 \section{Conclusion}
 \label{sec:Conclusion}

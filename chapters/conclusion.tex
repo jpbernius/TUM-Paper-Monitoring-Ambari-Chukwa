@@ -1,14 +1,17 @@
-In dependency of the Use Case of monitoring Hadoop cluster it is recommended to use Ambari or Chukwa. 
-Both application were founded by Apache, which is also the creator of Hadoop. 
-In archive each of them fulfils their range of use for monitoring processes properly. 
-Ambari gives the user an overlook about all the technical details in Hadoop, and measures technical failures, while Chukwa is aimed on a supporting log handling on Hadoop. 
-In conclusion can be sad that Ambari will support the whole use of Hadoop effectively in installation and running than Chukwa would be. 
-Nevertheless there is not one right answer with of this applications is more useful for monitoring, because both differ very in their use-case field. 
-A much more interesting Question would be, how Ambari and Chukwa could be used in a cooperation of their monitoring concepts.
+In dependency of the Use Case of monitoring Hadoop cluster it is recommended to use \amb or \chuk. 
+Both applications were developed by Apache, which is also the creator of \hadoop. 
+While still at the beginning of the development process, both Systems work properly.
+\amb gives the user an overlook about all the technical details in \hadoop, and measures technical failures, while \chuk is aimed on a supporting log handling on \hadoop. 
+In conclusion it can be said, that \amb will support the whole use of \hadoop effectively in installation and running. \chuk has its strength in log data related work. 
+Nevertheless there is not one right answer which of this applications is more useful for monitoring, because both differ in their use-case. 
+A much more interesting Question would be, how \amb and \chuk could be used in a cooperation of their monitoring concepts.
 
 
 \subsection{Summary}
-This paper describes shortly the concept of monitoring on some current topics, especially in distributed scaled systems. As applications, that apply the concept of monitoring in distributed systems, Ambari and Chukwa were chosen. Those were explained by their architecture and use for the big data software Hadoop. In conclusion a use case for Chukwa was introduced more specific. 
+This paper describes shortly the concept of monitoring on some current topics, especially in \isds. 
+As applications that apply the concept of monitoring in distributed systems, \amb and \chuk were chosen. 
+Both Systems are specialised for handling \hadoop clusters.
+They are engineered using a Client-Server like Architecture.
 
 \subsection{Use Case: Netflix}
 \label{netflix}
@@ -32,7 +35,7 @@ Suro still preserves attributes from \chuk like horizontal scalability as well a
 
 Item~\ref{itm:SutoMultiDest} allows Scenarios like the one described in Figure~\ref{fig:SuroArchitecture}. 
 Here, every log message is still stored in a Data Sink File, which is stored on \aws S3 as Netflix is hosting in the \aws Environment, and then processed by Hadoop. But secondly, if the routing condition matches, the Event is also forwarded to Apache Kafka. Kafka will continue processing the log files and use other Services, like Druid and ElasticSearch, to create Bug Reports and send Notifications to Developers.
-\begin{figure}[hbt]
+\begin{figure}
   \centering
   % https://drive.google.com/open?id=1Nmn-mWvxAwhcB9Vo4nbq0gutnWp0bPcCfBU14KMDVQ8
   \includegraphics[width=\linewidth,clip=true,trim=5mm 2cm 0 5mm]{images/NetflixSuro}
@@ -41,7 +44,7 @@ Here, every log message is still stored in a Data Sink File, which is stored on 
 \end{figure}
 
 This routing is made possible by the Message Router that was Introduced with Suro (and which is not available with \chuk). On Figure~\ref{fig:SuroMessageRouter}, the Message Router is inserted between the Collector and the Storage. Also, different to \chuk (see Figure~\ref{fig:ChukwaArchitecture}) there are now multiple Storage modules that Events get routed to.
-\begin{figure}[hbt]
+\begin{figure}
   \centering
   % https://drive.google.com/open?id=1Nmn-mWvxAwhcB9Vo4nbq0gutnWp0bPcCfBU14KMDVQ8
   \includegraphics[width=\linewidth,clip=true,trim=0 75mm 0 0]{images/SuroMessageRouter}
@@ -54,7 +57,7 @@ It allows ``Ad-hoc querying for further analysis like Raw log inspection, Detail
 
 
 \subsection{Future research}
-Current research has not shown, in which extend the two systems \amblong and \chuk can be used in an inter-connected manner, complementing each others services. 
+Current research has not shown in which extend the two systems \amblong and \chuk can be used in an inter-connected manner, complementing each others services. 
 Managing large, internet-scale clusters, consisting of multiple thousand hosts running \hadooplong can be more automated and controlled with Systems like \amb and \chuk in place, not only controlling the current state, but also managing installed components and archiving system-state information.
 
 Further, an improved way of storing Chukwas log data in a more structured way, allowing live querying, is still be to found. Boulon et al. did look into several options so far~\cite{Boulonb}, but this work has to be continued.
