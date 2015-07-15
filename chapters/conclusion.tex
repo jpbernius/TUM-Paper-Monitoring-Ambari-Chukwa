@@ -40,7 +40,6 @@ Here, every log message is still stored in a Data Sink File, which is stored on 
   \label{fig:SuroArchitecture}
 \end{figure}
 
-
 This routing is made possible by the Message Router that was Introduced with Suro (and which is not available with \chuk). On Figure~\ref{fig:SuroMessageRouter}, the Message Router is inserted between the Collector and the Storage. Also, different to \chuk (see Figure~\ref{fig:ChukwaArchitecture}) there are now multiple Storage modules that Events get routed to.
 \begin{figure}[hbt]
   \centering
@@ -49,6 +48,9 @@ This routing is made possible by the Message Router that was Introduced with Sur
   \caption{Netflix Suro Message Router~\cite{Bae2013}}
   \label{fig:SuroMessageRouter}
 \end{figure}
+
+Netflix also uses Hive as a Storage provider. (As discussed in ~\ref{par:chukStoreage}.) 
+It allows ``Ad-hoc querying for further analysis like Raw log inspection, Detailed inspection of on stream session or Simple summary (..) for operational metrics.''~\cite{Tse2010}
 
 
 \subsection{Future research}

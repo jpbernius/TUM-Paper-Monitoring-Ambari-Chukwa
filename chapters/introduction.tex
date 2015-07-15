@@ -4,7 +4,11 @@ As internet applications are increasing, more and more servers are getting integ
 
 \subsection{Definitions}
 
-\textit{Monitoring} is a process, which controls, interacts and manages other processes and systems. It has the ability to locate, prevent and repair failures in advance. It is an important strategy for availability and security of procedures. Monitoring is always running parallel to activities and gives the user the ability of a faster failure cooper, that possibly people could do.\cite{Jammes2012}
+\textit{Monitoring} is a process, which controls, interacts and manages other processes and systems. 
+It has the ability to locate, prevent and repair failures in advance. 
+It is an important strategy for availability and security of procedures. 
+Monitoring is always running parallel to activities and gives the user the ability of a faster failure cooper, that possibly people could do.\cite{Jammes2012}
+Ford said in 1990 that it is ``an important long-term goal (..) [to incorporate] such monitoring functionality in the highly distributed, ``inteligent'' next generation of [distributed] systems.''~\cite{Ford1990}
 
 \amb is an open source framework that allows to control, manage, provide and install Hadoop Cluster easily from the included Web-Interface. It simplifies the use of Hadoop.\cite{Hortonworks2013}
 
@@ -16,7 +20,8 @@ Second, the concept of monitoring~(\ref{subsec:ConceptMonitoring}) is introduced
 Third, a comparison~(\ref{subsec:Differentiation}) is made and, lastly, a conclusion~(\ref{sec:Conclusion}) is drawn.
 
 \subsection{Motivation}
-This paper has been written for the seminar \isdslong at the \tum. ~\cite{SeminarInfo}
+This paper has been written for the seminar \isdslong at the \tum. Main Goals are studying ``requirements and properties that distinguish Internet-scale distributed systems from other types of distributed systems'' and further how to ``satisfy these requirements at Internet-scale.''~\cite{SeminarInfo} 
+When introducing systems, which scale to a couple of thousand nodes, it is not only important how the system works, but also how to get such a cluster up and running, check on the clusters health and get more detailed insights of possible failures.
 
 \subsection{Literature Review}
 As it is highly recommended to document the research and review process,~\cite{brocke09} this paragraph will summarise the research and review process.
@@ -35,7 +40,7 @@ Hadoops Architecture is divided in many parts. To understand \amb and \chuk, the
   	\item Map and Reduce is the main function which maps and reduces data till the core mean on all Hadoop clusters.\cite{Dagli2014}
   \end{enumerate}
 
-\subsubsection*{Map Reduce}
+\paragraph{Map Reduce}
 The Map and Reduce process is the main function of Hadoop. After the division of data across multiple clusters, it maps similar datasets together into one cluster. 
 Later on it analyses and reduces the data till the main sense. This data is getting combined together into the output. \cite{Dagli2014}
 
@@ -43,3 +48,6 @@ Hadoop Users need to implement the rules for the map and reduce process. All the
 
 
 \amb and \chuk both presuppose a basic understanding of Hadoop as well as the map and reduce function. Both application are powered by Apache and are monitoring processes for Hadoop.They differ in their area of operation of monitoring.\cite{ApacheSoftwareFoundation2015}
+
+\paragraph{Demux}
+The \demux process includes ``pars[ing and]  convert[ing]  unstructured  chunks  to  fully  or  semi  structured [Records].''~\cite{Boulon}

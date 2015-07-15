@@ -1,4 +1,7 @@
 \subsection{How is the concept of monitoring implemented in Ambari and Chukwa?}
+\label{subsec:Implementation}
+
+
 \subsubsection{Ambari}
 \amb is an open source framework that allows the User to monitor, manage and install Hadoop.\cite{ApacheSoftwareFoundation2015} It has the ability to start, stop and configure Hadoop processes automatically on clusters, without any intervention of the user.\cite{Hortonworks2013} \amb was founded to simplify the use of Hadoop.\cite{Hortonworks2013}
 
@@ -16,12 +19,27 @@ The connection between \amb and Hadoop is done by the \amb Agents.\cite{Sako} \a
   \label{fig:AmbariArchitecture}
 \end{figure}
 
-The concept of monitoring is given in two specific ways with \amb\. \amb has the knowledge about every cluster health and its data.\cite{Foley2012} It can provide and improve the health situation of a Hadoop cluster and analyse the data in ways there are useful for the user.\cite{Foley2012} The user has an overview on the current situation through the Web application.\cite{Foley2012} \amb divides to monitoring Process in three parts. \cite{Foley2012}The first one is the List of all the Application \amb is running on each connected clusters. It shows the name, status and number of clusters that are in default, and need to get fixed.\cite{Foley2012} The second part is explain all the technical details about the application, such as storing space and running time.\cite{Foley2012} The last part is aimed to show illustratively how long and effective an application has been running on any clusters. \cite{Foley2012}Based on this data the user can give up requests to change the applications or add more clusters into one process, through the API. \cite{Sako}\amb then will install automatically an new application to the cluster on sending heartbeat information to the \amb Agent.\cite{Sako} \amb has the ability of installing and giving an breve overlook about the health of the system; its not capable of analysing the data qualitatively.\cite{Sako}
+The concept of monitoring is given in two specific ways with \amb. 
+\amb has the knowledge about every cluster health and its data.~\cite{Foley2012} 
+It can provide and improve the health situation of a Hadoop cluster and analyse the data in ways there are useful for the user.~\cite{Foley2012} 
+The user has an overview on the current situation through the Web application.~\cite{Foley2012} 
+\amb divides to monitoring Process in three parts.~\cite{Foley2012}
+The first one is the List of all the Application \amb is running on each connected clusters. 
+It shows the name, status and number of clusters that are in default, and need to get fixed.~\cite{Foley2012} 
+The second part is explain all the technical details about the application, such as storing space and running time.~\cite{Foley2012} 
+The last part is aimed to show illustratively how long and effective an application has been running on any clusters.~\cite{Foley2012} 
+Based on this data the user can give up requests to change the applications or add more clusters into one process, through the API.~\cite{Sako} 
+\amb then will install automatically an new application to the cluster on sending heartbeat information to the \amb Agent. \cite{Sako} 
+\amb has the ability of installing and giving an breve overlook about the health of the system; its not capable of analysing the data qualitatively.\cite{Sako}
+
 
 \subsubsection{Chukwa}
 \chuklong is ``a data collection system for monitoring and analyzing large distributed systems.''~\cite{Boulona}
-It is built to support log handling on scalable Hadoop clusters. \chuk is developed at Yahoo! and ``is built on top of HDFS and Map-Reduce.''~\cite{Rabkin2008a}
+It is built to support log handling on scalable Hadoop clusters. 
+Further, it allows ``[c]ross system analysis''~\cite{ChukwaPoster} 
+\chuk is developed at Yahoo! and ``is built on top of HDFS and Map-Reduce.''~\cite{Rabkin2008a}
 Its main non-functional goals are low footprint on System Usage (less than 5\%) and minimal changes to user workflow.~\cite{Rabkin2010}
+``All (..) data [is] in one place''~\cite{ChukwaPoster} eventually.
 
 \paragraph{The process}
 For processing Log files and Application Metrics, \chuk starts on the producing machine, which is running a \chuk Agent. 
@@ -46,14 +64,19 @@ Every few minutes, the \textit{Data Sink} File is closed. (Files cannot be proce
 All available \textit{Data Sink} files will be processed by a pair of Demux \mr jobs.~\cite{Boulona} 
 
 
-As described by Boulon et al., the \mr processing should produce insights about ``needs for accounting, capacity planning, performance characterization, utilization'', ``reduc[e] the number and extent of outages'', ``reduc[e] the number of false alerts and increasing the value and confidence level of true alerts'' and ``reduc[e] the time and effort required to identify and resolve cluster issues.''\cite{Boulonb}
+As described by Boulon et al., the \mr processing should produce insights about 
+``needs for accounting, capacity planning, performance characterization, utilization'', 
+``reduc[e] the number and extent of outages'', 
+``reduc[e] the number of false alerts and increasing the value and confidence level of true alerts'' and 
+``reduc[e] the time and effort required to identify and resolve cluster issues.''~\cite{Boulonb}
 
-To achieve these goals, ``the first job simply archives all the collected data, without processing or interpreting it. The second job parses out structured data from some of the logs, and loads this structured data into a data store.''~\cite{Boulona} 
+To achieve these goals, ``the first job simply archives all the collected data, without processing or interpreting it. 
+The second job parses out structured data from some of the logs, and loads this structured data into a data store.''~\cite{Boulona} 
 
 % reduce can be customised. https://chukwa.apache.org/docs/r0.4.0/programming.html
 
 \paragraph{The Storage}
-
+\label{par:chukStoreage}
 The \mr jobs will \demux data out of the \textit{sink} files and into structured storage.~\cite{Boulonb} 
 \chuk supports multiple, pluggable storage formats, which ``also aids integration with legacy systems. Chukwa also offers the flexibility to support other data sources, such as syslog or local IPC.''~\cite{Rabkin2010a} 
 
