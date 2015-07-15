@@ -21,17 +21,19 @@ Suro goes beyond Chukwas scope of functionality in the following points:
 \end{enumerate}
 Suro still preserves attributes from \chuk like horizontal scalability as well as ``large number of connections, and high throughput''~\cite{GithubNetflixSuro}
 
-\begin{figure}
+Item~\ref{itm:SutoMultiDest} allows Scenarios like the one described in Figure~\ref{fig:SuroArchitecture}. 
+Here, every log message is still stored in a Data Sink File, which is stored on \aws S3 as Netflix is hosting in the \aws Environment, and then processed by Hadoop. But secondly, if the routing condition matches, the Event is also forwarded to Apache Kafka. Kafka will continue processing the log files and use other Services, like Druid and ElasticSearch, to create Bug Reports and send Notifications to Developers.
+\begin{figure}[hbt]
   \centering
   % https://drive.google.com/open?id=1Nmn-mWvxAwhcB9Vo4nbq0gutnWp0bPcCfBU14KMDVQ8
   \includegraphics[width=\linewidth,clip=true,trim=5mm 2cm 0 5mm]{images/NetflixSuro}
   \caption{Netflix Suro Architecture~\cite{Bae2013, Harris2013}}
   \label{fig:SuroArchitecture}
 \end{figure}
-Item~\ref{itm:SutoMultiDest} allows Use-Cases like the one described in Figure~\ref{fig:SuroArchitecture}. 
 
 
-\begin{figure}
+This routing is made possible by the Message Router that was Introduced with Suro (and which is not available with \chuk). On Figure~\ref{fig:SuroMessageRouter}, the Message Router is inserted between the Collector and the Storage. Also, different to \chuk (see Figure~\ref{fig:ChukwaArchitecture}) there are now multiple Storage modules that Events get routed to.
+\begin{figure}[hbt]
   \centering
   % https://drive.google.com/open?id=1Nmn-mWvxAwhcB9Vo4nbq0gutnWp0bPcCfBU14KMDVQ8
   \includegraphics[width=\linewidth,clip=true,trim=0 75mm 0 0]{images/SuroMessageRouter}

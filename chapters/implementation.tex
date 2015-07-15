@@ -1,5 +1,4 @@
 \subsection{How is the concept of monitoring implemented in Ambari and Chukwa?}
-\linebreak
 \subsubsection{Ambari}
 \amb is an open source framework that allows the User to monitor, manage and install Hadoop.\cite{ApacheSoftwareFoundation2015} It has the ability to start, stop and configure Hadoop processes automatically on clusters, without any intervention of the user.\cite{Hortonworks2013} \amb was founded to simplify the use of Hadoop.\cite{Hortonworks2013}
 
@@ -9,7 +8,7 @@ Secondly the \amb Server, which is divided into smaller parts itself.\cite{Sako}
 
 The connection between \amb and Hadoop is done by the \amb Agents.\cite{Sako} \amb Server installs on each host an \amb Agent, that gives every few seconds a heartbeat to the server; the server answers with an instruction for the Agent or it sends a confirmation about his current life-status.\cite{Sako} All hosts are connected to the clusters by Hadoop.\cite{Sako}
 
-\begin{figure}
+\begin{figure}[hbt]
   \centering
   % https://docs.google.com/open?id=1A3TbXPEQeknqWxxX811XHG7pcQOuMEFDmo_hl8LlfYk
   \includegraphics[width=\linewidth,clip=true,trim=0 3cm 0 0]{images/AmbariArchitecture}
@@ -30,7 +29,7 @@ This piece of Java Software is constantly gathering Application Logs and Metrics
 This can be \textit{syslog} as well as an Application specific location. 
 Each Source is fetched by an so called \textit{Adaptor}.~\cite{ChukwaAdminAgent}
 
-\begin{figure}
+\begin{figure}[hbt]
   \centering
   % https://docs.google.com/open?id=11xCUWZ94zbUa4eqhoScjMmfIL2pI-IkDx02qvcCXohY
   \includegraphics[width=\linewidth,clip=true,trim=0 6cm 0 0]{images/ChukwaArchitecture}
